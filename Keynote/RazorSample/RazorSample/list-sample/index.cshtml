@@ -1,0 +1,26 @@
+﻿@using RazorSample.Model;
+
+@{
+    Layout = "/layout/_MainLayout.cshtml";
+    Page.Title = "Hello Razor Lists!!";
+
+
+    var list = new List<Link>
+    {
+        new Link("My website", "http://galasoft.ch"),
+        // ...
+        new Link("My employer", "http://microsoft.ch"),
+        new Link("My motorbike", "http://harley-davidson.com"),
+    };
+}
+
+<h1>@Page.Title</h1>
+
+<ul>
+
+    @foreach (var link in list)
+    {
+        <li><a href="@link.Url">@link.Title</a></li>
+    }
+
+</ul>
